@@ -1,6 +1,6 @@
 <template>
   <div class="home">
-    <img alt="Vue logo" src="../assets/logo.png" />
+    <div>{{ getAuth }}</div>
     <HelloWorld msg="Welcome to Your Vue.js App" />
   </div>
 </template>
@@ -13,6 +13,11 @@ export default {
   name: "Home",
   components: {
     HelloWorld
+  },
+  computed: {
+    getAuth() {
+      return this.$store.state.auth.isAuthenticated;
+    }
   }
 };
 </script>
